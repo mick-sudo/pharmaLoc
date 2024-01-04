@@ -33,4 +33,14 @@ public class MutuelleServiceImpl implements MutuelleService{
     public void deleteMutuelle(Long id) {
         mutuelleRepository.deleteById(id);
     }
+
+    @Override
+    public Optional<Mutuelle> updateMutuel(Long id, Mutuelle mutuelle) {
+        return mutuelleRepository.findById(id).map(m->{
+            m.setName(mutuelle.getName());
+            m.setTeletransmissionNumber(mutuelle.getTeletransmissionNumber());
+            return mutuelleRepository.save(m);
+        });
+    }
+
 }

@@ -1,6 +1,7 @@
 package com.test.pharma.controller;
 
 import com.test.pharma.model.Mutuelle;
+import com.test.pharma.model.Patient;
 import com.test.pharma.service.MutuelleService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,5 +34,10 @@ public class MutuelleController {
     @DeleteMapping("/{id}")
     public void deleteMutuel(@PathVariable Long id){
         mutuelleService.deleteMutuelle(id);
+    }
+
+    @PutMapping("/{id}")
+    public Optional<Mutuelle> updatePatientById(@PathVariable Long id, @RequestBody Mutuelle mutuelle){
+        return mutuelleService.updateMutuel(id, mutuelle);
     }
 }

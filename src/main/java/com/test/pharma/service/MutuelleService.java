@@ -15,4 +15,6 @@ public interface MutuelleService {
     Optional<Mutuelle> getMutuelleById(Long id);
 
     void deleteMutuelle(Long id);
+
+    Optional<Mutuelle> updateMutuel(Long id, Mutuelle mutuelle);
 }
