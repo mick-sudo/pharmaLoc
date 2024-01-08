@@ -1,5 +1,6 @@
 package com.test.pharma.service;
 
+import com.test.pharma.DTO.PatientDTO;
 import com.test.pharma.model.Patient;
 
 import java.util.List;
@@ -16,4 +17,6 @@ public interface PatientService {
     void deletePatient(Long id);
 
     Optional<Patient> updatePatient(Long id, Patient patient);
+
+    PatientDTO findPatientDTOBySocialSecurityNumber(String socialSecurityNumber);
 }
